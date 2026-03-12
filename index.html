@@ -125,34 +125,37 @@
         var resultElement;
         
         function classifyConsumption() {
-            // Get input value
             kwhUsage = parseFloat(document.getElementById('kwhInput').value);
             resultElement = document.getElementById('resultArea');
+                     
+            // Conditional statements 
             
-            // Validate input
             if (isNaN(kwhUsage) || kwhUsage < 0) {
                 alert('Please enter a valid positive number for electricity usage.');
                 return;
             }
             
-            // Conditional statements to classify consumption
             if (kwhUsage >= 0 && kwhUsage <= 100) {
                 category = "Lifeline Consumer";
                 description = "Discounted electricity rates - You qualify for subsidized rates!";
                 displayResult('lifeline');
-            } else if (kwhUsage >= 101 && kwhUsage <= 200) {
+            } 
+            else if (kwhUsage >= 101 && kwhUsage <= 200) {
                 category = "Low Consumption";
                 description = "Normal residential rate - Your usage is within normal range.";
                 displayResult('low');
-            } else if (kwhUsage >= 201 && kwhUsage <= 300) {
+            } 
+            else if (kwhUsage >= 201 && kwhUsage <= 300) {
                 category = "Average Consumption";
                 description = "Typical electricity usage - You're using electricity like most households.";
                 displayResult('average');
-            } else if (kwhUsage >= 301 && kwhUsage <= 500) {
+            } 
+            else if (kwhUsage >= 301 && kwhUsage <= 500) {
                 category = "High Consumption";
                 description = "Higher electricity usage - Consider energy-saving measures.";
                 displayResult('high');
-            } else {
+            } 
+            else {
                 category = "Very High Consumption";
                 description = "Heavy electricity users - Review your energy consumption habits.";
                 displayResult('very-high');
